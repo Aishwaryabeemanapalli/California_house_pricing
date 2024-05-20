@@ -1,0 +1,14 @@
+California_house_pricing ML Project.
+
+For creating new repository in Github, I am using all the below checklist in creating new repo.
+Add a readme file.
+.gitignore template is set to "Python" - The main reason being my coding is entirely done in Python and some of the files that are present in python
+need not be commited every single time I am trying to update my code. 
+Any license can be picked up. Here we picked - Apache License 2.0
+
+
+After writing requirements.txt file. You have to configure GIT
+git config --global user.name "[USERNAME]"
+git config --global user.email "[EMAIL ID]"
+
+Whichever files we don't want to commit we can add them to git ignore file as file path. 
