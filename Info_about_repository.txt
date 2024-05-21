@@ -23,3 +23,8 @@ The reason why we are doing 1,-1 is because this is the single data record we ar
 and now we have to take this and do transformation. 
 Standardization expects single data record. 
 Now we need to import the scaling pickle file. 
+
+
+We use Heroku to deploy our entire project. 
+Always remember that we should add certain configurations to deploy into Heroku. 
+For that we need a Procfile. VS Code will understand the extension automatically. 
