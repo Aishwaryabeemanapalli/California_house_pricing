@@ -12,3 +12,14 @@ git config --global user.name "[USERNAME]"
 git config --global user.email "[EMAIL ID]"
 
 Whichever files we don't want to commit we can add them to git ignore file as file path. 
+
+App.py  
+We are using predict_api() method to find predictions. 
+The json object is used for the data. 
+We need to have data.values() because json has data in the form of key-value pairs.
+This won't be sufficient so we convert to list. 
+With respect to pickling we did, we need to do reshape. So we convert to np.array(list(data.values())).reshape(1,-1)
+The reason why we are doing 1,-1 is because this is the single data record we are going to get 
+and now we have to take this and do transformation. 
+Standardization expects single data record. 
+Now we need to import the scaling pickle file. 
