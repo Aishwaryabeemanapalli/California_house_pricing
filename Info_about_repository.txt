@@ -28,3 +28,25 @@ Now we need to import the scaling pickle file.
 We use Heroku to deploy our entire project. 
 Always remember that we should add certain configurations to deploy into Heroku. 
 For that we need a Procfile. VS Code will understand the extension automatically. 
+
+
+We also use Docker to deploy:
+With the help of the file "Dockerfile", it creates a docker image and runs within a container in any OS which interacts with the kernel of our OS.
+Docker is the best tool to avoid configuration issues across multiple machines. With the help 
+of docker we can avoid the base config issues.  
+Commands: 
+FROM, COPY, WORKDIR, RUN, EXPOSE, CMD
+FROM python:3.11
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+EXPOSE $PORT
+CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+
+The commands mean that from the base image which is Python:3.11 probably base image in Linux machine we are trying to copy our entire code(denoted by ".") into a folder called app (denoted by "/app") and making it as a working directory. Then we run the command to install all the dependency packages. Finally we expose. Our code is inside a container which is the docker image and to access the application inside the container we have to expose some port. 
+Then only we can access the URL. Then we write $PORT to execute the code into the port. 
+We use CMD to run the app. We use gunicorn and give the app details to run the app inside Heroku cloud itself. bind is helping to bind the $PORT to our local IP address.
+
+Next we create a folder ".github/workflows" and create a file in this folder called "main.yaml"
+The entire configuration to build the docker image is created in main.yaml file
+
